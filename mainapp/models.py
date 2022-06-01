@@ -51,4 +51,4 @@ class TimeRecord(models.Model):
   comments = models.TextField(null=True, blank=True)
 
   def __str__(self):
-    return f"{self.user.username} {self.date} {self.action}"
+    return f"{self.user.username} {self.date} {self.action}" 
