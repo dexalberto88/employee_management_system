@@ -113,6 +113,10 @@ python manage.py runserver 0:8000
 1. Open http://172.17.0.x:8000/admin/
 2. Login using superuser account
 3. Create at least 1 staff user
+* Click Users +Add
+* Click Save and continue editing
+* Check Staff status in Permissions
+* Click SAVE
 4. Logout in admin
 5. Go to http://172.17.0.x:8000/
 6. Login using staff user and add new Employees
