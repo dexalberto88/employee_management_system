@@ -1,0 +1,18 @@
+{% extends "mainapp/base.html" %}
+
+{% block title %}Manage{% endblock %}
+
+{% block content %}
+  <p>Manage</p>
+  <a href="{% url 'mainapp:view-employees' %}" class="link-primary">View Employees</a><br>
+  <a href="{% url 'mainapp:add-employee-form' %}" class="link-primary">Add Employee</a><br>
+  <a href="{% url 'mainapp:update-employee' %}" class="link-primary">Update Employee</a><br>
+  <a href="{% url 'mainapp:delete-employees' %}" class="link-primary">Delete Employees</a><br>
+
+  <a href="{% url 'mainapp:departments' %}" class="link-primary">Departments</a><br>
+  <a href="#" class="link-primary">Job Roles</a>
+
+  <script>
+    document.getElementById("nav_manage_id").setAttribute("class", "nav-link active"); 
+  </script>  
+{% endblock %}

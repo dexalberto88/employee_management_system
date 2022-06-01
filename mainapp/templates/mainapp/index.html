@@ -1,0 +1,8 @@
+{% extends "mainapp/base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+  <p>Welcome to Company, {{ user.first_name }}!</p>
+  <p><small>Last login: {{ user.last_login }}</small></p>
+{% endblock %}

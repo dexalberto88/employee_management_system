@@ -1,0 +1,49 @@
+{% extends "mainapp/base.html" %}
+
+{% block title %}Departments{% endblock %}
+{% block content %}
+  <p>Departments</p>
+
+  <form method="post">{% csrf_token %}
+    <table class="table table-bordered table-sm">
+      <thead>
+        <tr>
+          <th>Select/Add</th>
+          <th>Name</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for department in department_list %}
+        <tr>
+          <td>
+            <input type="checkbox" id="department" name="select_departments" value="{{ department.name }}">
+          </td>
+          <td>
+            <label for="department">{{ department.name }}</label><br>
+          </td>
+        </tr>
+        {% endfor %}
+        <tr>
+          <td>
+            <label for="{{ form.name.label_id }}">New</label><br>
+          </td>
+          <td>
+            {{ form.name.errors }}
+            {{ form.name }}
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    <input type="submit" name="action" value="Add" class="btn btn-primary btn-sm">
+    <input type="submit" name="action" value="Delete" class="btn btn-danger btn-sm">    
+  </form>
+
+  {% if messages %}
+  <p>{{ messages }}</p>
+  {% endif %}
+
+  <script>
+    document.getElementById("nav_manage_id").setAttribute("class", "nav-link active"); 
+  </script> 
+{% endblock %}
